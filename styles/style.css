@@ -139,6 +139,10 @@ a {
   font-weight: 700;
 }
 
+h2 {
+  color: white;
+}
+
 
 
 @media(min-width: 674px) {

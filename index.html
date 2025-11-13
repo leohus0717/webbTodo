@@ -47,7 +47,28 @@
     </header>
 
     <main>
-      
+      <div class="taskCreate">
+        <h1>Add a new task</h1>
+        <div class="taskAlt">
+          <input type="text" placeholder="Task name" id="taskName" />
+          <input type="date" placeholder="Due date" id="taskDueDate" />
+          <input type="text" placeholder="Priority" id="taskPriority" />
+          <button onclick="addTask()">Add</button>
+        </div>
+        <div class="todoList">
+          <h1>Todo list</h1>
+          <div class="taskList">
+            <div class="task">
+              <h2>Task 1</h2>
+              <p>Task description</p>
+              <div class="taskActions">
+                <button onclick="editTask(1)">Edit</button>
+                <button onclick="deleteTask(1)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
