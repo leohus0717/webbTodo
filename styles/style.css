@@ -1,0 +1,176 @@
+:root {
+  /* Base colors from realtimecolors.com */
+  --text: oklch(95.78% 0.005 95.10);
+  --background: oklch(18.27% 0.010 88.81);
+  --primary: oklch(81.16% 0.045 91.30);
+  --secondary: oklch(49.33% 0.064 90.73);
+  --accent: oklch(69.78% 0.102 90.30);
+}
+
+/* Derived colors - calculated from base colors */
+:root,
+body.light {
+  /* Derived background shades */
+  --bg-dark: oklch(from var(--background) clamp(0, l - 0.1, 1) c h);
+  --bg: oklch(from var(--background) l c h);
+  --bg-light: oklch(from var(--background) clamp(0, l + 0.1, 1) c h);
+
+  /* Derived text shades */
+  --text-muted: oklch(from var(--text) clamp(0, l - 0.25, 1) c h);
+
+  /* Borders & highlights */
+  --border: oklch(from var(--background) clamp(0, l + 0.2, 1) c h);
+  --highlight: oklch(from var(--primary) clamp(0, l + 0.1, 1) calc(c * 1.1) h);
+
+  /* Gradients */
+  --gradient: linear-gradient(0deg, var(--bg) 90%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+
+  /* Card border */
+  --border-card: solid 1px var(--border);
+
+  /* Shadows */
+  --shadow: 0px 2px 2px
+      oklch(from var(--background) clamp(0, l - 0.5, 1) c h / 0.07),
+    0px 4px 4px oklch(from var(--background) clamp(0, l - 0.5, 1) c h / 0.15);
+}
+
+/* Light mode base colors */
+body.light {
+  --text: oklch(17.73% 0.008 95.51);
+  --background: oklch(95.83% 0.007 88.64);
+  --primary: oklch(44.11% 0.050 91.18);
+  --secondary: oklch(79.41% 0.059 90.72);
+  --accent: oklch(67.95% 0.102 89.51);
+}
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.125s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+img {
+  width: 100%;
+}
+
+header,
+main,
+footer {
+  min-height: 10vh;
+  /* border: solid 1px red; */
+  padding-inline: 3%;
+}
+
+header {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  align-items: center;
+  border-bottom: solid 1px var(--highlight);
+  align-content: center;
+}
+
+main {
+  min-height: 80vh;
+}
+
+footer {
+  background-color: var(--bg-light);
+  align-content: center;
+  width: 1fr;
+}
+
+a, p, h1 {
+  color: var(--text);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text);
+  width: 30px;
+  cursor: pointer;
+}
+
+#toggleMode {
+  background: none;
+  color: var(--text);
+  width: 35px;
+  border: none;
+  position: absolute;
+  top: 10%;
+  right: 2.5%;
+}
+
+nav {
+  background-color: var(--bg-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5%;
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.toggleMenu {
+  color: var(--text);
+  background: none;
+  border: none;
+  width: 30px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+
+
+@media(min-width: 674px) {
+  header{
+    justify-items: center;
+  }
+  nav {
+    min-width: 50%;
+    position: static;
+    background: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0;
+    place-items: center;
+  }
+  #navBox {
+    min-width: 50%;
+    position: static;
+    background: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0;
+    place-items: center;
+  }
+  .toggleMenu {
+    display: none;
+  }
+  .closeBtn {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
