@@ -50,20 +50,41 @@
       <div class="taskCreate">
         <h1>Add a new task</h1>
         <div class="taskAlt">
-          <input type="text" placeholder="Task name" id="taskName" />
-          <input type="date" placeholder="Due date" id="taskDueDate" />
-          <input type="text" placeholder="Priority" id="taskPriority" />
-          <button onclick="addTask()">Add</button>
+          <input
+            class="btnStyle"
+            type="text"
+            placeholder="Task name"
+            id="taskName"
+          />
+          <input
+            placeholder="Date"
+            class="btnStyle"
+            type="text"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+            id="date"
+          />
+          <select class="btnStyle" name="Priority">
+            <option value="1">Low</option>
+            <option value="2">Medium</option>
+            <option value="3">High</option>
+          </select>
+          <button onclick="addTask()" class="addBtn">Add</button>
         </div>
         <div class="todoList">
           <h1>Todo list</h1>
           <div class="taskList">
             <div class="task">
-              <h2>Task 1</h2>
-              <p>Task description</p>
+              <div class="taskGrid">
+                <div class="taskText">
+                  <h2>Task 1</h2>
+                  <p>Task description</p>
+                </div>
+                <input class="checkBox" type="checkbox" placeholder="" />
+              </div>
               <div class="taskActions">
-                <button onclick="editTask(1)">Edit</button>
-                <button onclick="deleteTask(1)">Delete</button>
+                <button class="btnStyle" onclick="editTask(1)">Edit</button>
+                <button class="btnStyle" onclick="deleteTask(1)">Delete</button>
               </div>
             </div>
           </div>
