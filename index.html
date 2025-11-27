@@ -77,8 +77,67 @@
             <div class="task">
               <div class="taskGrid">
                 <div class="taskText">
-                  <h2>Task 1</h2>
-                  <p>Task description</p>
+                  <h2>Task Name</h2>
+                  <p>
+                    Date: 2025-01-01 | Priority:
+                    <span
+                      style="
+                        background-color: var(--priority-high);
+                        padding: 0.25rem;
+                        border-radius: 1rem;
+                        text-align: center;
+                      "
+                      >high</span
+                    >
+                  </p>
+                </div>
+                <input class="checkBox" type="checkbox" placeholder="" />
+              </div>
+              <div class="taskActions">
+                <button class="btnStyle" onclick="editTask(1)">Edit</button>
+                <button class="btnStyle" onclick="deleteTask(1)">Delete</button>
+              </div>
+            </div>
+            <div class="task">
+              <div class="taskGrid">
+                <div class="taskText">
+                  <h2>Task Name</h2>
+                  <p>
+                    Date: 2025-01-01 | Priority:
+                    <span
+                      style="
+                        background-color: var(--priority-medium);
+                        padding: 0.25rem;
+                        border-radius: 1rem;
+                        text-align: center;
+                      "
+                      >medium</span
+                    >
+                  </p>
+                </div>
+                <input class="checkBox" type="checkbox" placeholder="" />
+              </div>
+              <div class="taskActions">
+                <button class="btnStyle" onclick="editTask(1)">Edit</button>
+                <button class="btnStyle" onclick="deleteTask(1)">Delete</button>
+              </div>
+            </div>
+            <div class="task">
+              <div class="taskGrid">
+                <div class="taskText">
+                  <h2>Task Name</h2>
+                  <p>
+                    Date: 2025-01-01 | Priority:
+                    <span
+                      style="
+                        background-color: var(--priority-low);
+                        padding: 0.25rem;
+                        border-radius: 1rem;
+                        text-align: center;
+                      "
+                      >low</span
+                    >
+                  </p>
                 </div>
                 <input class="checkBox" type="checkbox" placeholder="" />
               </div>
@@ -96,14 +155,6 @@
       <p>&copy; 2025 Leon Husic. All rights reserved.</p>
     </footer>
 
-    <script>
-      function toggle() {
-        document.body.classList.toggle("light");
-      }
-
-      function toggleMenu() {
-        document.querySelector("nav").classList.toggle("hidden");
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>

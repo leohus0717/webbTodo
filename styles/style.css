@@ -5,6 +5,10 @@
   --primary: oklch(81.16% 0.045 91.3);
   --secondary: oklch(49.33% 0.064 90.73);
   --accent: oklch(69.78% 0.102 90.3);
+
+  --priority-high: oklch(60% 0.18 20); /* A vibrant, but not overpowering red */
+  --priority-medium: oklch(75% 0.12 80); /* A warm, noticeable orange-yellow */
+  --priority-low: oklch(70% 0.09 150); /* A calm, slightly muted green */
 }
 
 /* Derived colors - calculated from base colors */
