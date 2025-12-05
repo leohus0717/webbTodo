@@ -1,57 +1,113 @@
+let tasks = [];
+
+// -------------------- ADD TASK --------------------
 function addTask() {
   let name = document.querySelector("#taskName").value;
   let date = document.querySelector("#date").value;
   let priority = document.querySelector("select").value;
-  console.log(name, date, priority);
 
-  let task = document.createElement("div");
-  task.classList.add("task");
+  // Create simple task object
+  const taskItem = {
+    name: name,
+    date: date,
+    priority: priority,
+  };
+
+  // Save to array
+  tasks.push(taskItem);
+
+  // Save to localStorage
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  // Show task on screen
+  displayTask(taskItem);
+
+  // Clear inputs
+  document.querySelector("#taskName").value = "";
+  document.querySelector("#date").value = "";
+}
+
+// -------------------- DISPLAY TASK --------------------
+function displayTask(task) {
   let priorityText;
   let priorityColor;
 
-  if (priority === "1") {
+  if (task.priority === "1") {
     priorityText = "low";
     priorityColor = "var(--priority-low)";
-  } else if (priority === "2") {
+  } else if (task.priority === "2") {
     priorityText = "medium";
     priorityColor = "var(--priority-medium)";
-  } else if (priority === "3") {
+  } else if (task.priority === "3") {
     priorityText = "high";
     priorityColor = "var(--priority-high)";
   }
 
-  task.innerHTML = `
-            <div class="task">
-              <div class="taskGrid">
-                <div class="taskText">
-                  <h2>${name}</h2>
-                  <p>
-                    Date: ${date} | Priority:
-                    <span
-                      style="
-                        background-color: ${priorityColor};
-                        padding: 0.25rem;
-                        border-radius: 1rem;
-                        text-align: center;
-                      "
-                      >${priorityText}</span
-                    >
-                  </p>
-                </div>
-                <input class="checkBox" type="checkbox" placeholder="" />
-              </div>
-              <div class="taskActions">
-                <button class="btnStyle" onclick="editTask(1)">Edit</button>
-                <button class="btnStyle" onclick="deleteTask(1)">Delete</button>
-              </div>
-            </div>`;
-  document.querySelector(".taskList").appendChild(task);
+  const taskDiv = document.createElement("div");
+  taskDiv.classList.add("task");
+
+  taskDiv.innerHTML = `
+    <div class="taskGrid">
+      <div class="taskText">
+        <h2>${task.name}</h2>
+        <p>
+          Date: ${task.date} | Priority:
+          <span
+            style="
+              background-color: ${priorityColor};
+              padding: 0.25rem;
+              border-radius: 1rem;
+              text-align: center;
+            "
+          >${priorityText}</span>
+        </p>
+      </div>
+      <input class="checkBox" type="checkbox" />
+    </div>
+<div class="taskActions">
+  <button class="btnStyle">Edit</button>
+  <button class="btnStyle" onclick="deleteTask(this)">Delete</button>
+</div>
+
+  `;
+
+  document.querySelector(".taskList").appendChild(taskDiv);
 }
 
+// -------------------- LOAD SAVED TASKS --------------------
+function loadTasks() {
+  const saved = localStorage.getItem("tasks");
+
+  if (saved) {
+    tasks = JSON.parse(saved);
+    tasks.forEach((task) => displayTask(task));
+  }
+}
+
+// Run when page loads
+loadTasks();
+
+// -------------------- OTHER FUNCTIONS --------------------
 function toggle() {
   document.body.classList.toggle("light");
 }
 
 function toggleMenu() {
   document.querySelector("nav").classList.toggle("hidden");
+}
+
+// -------------------- DELETE FUNKTION --------------------
+
+function deleteTask(button) {
+  const taskDiv = button.parentElement.parentElement;
+
+  // remove from screen
+  taskDiv.remove();
+
+  // remove from localStorage using the name
+  const name = taskDiv.querySelector("h2").textContent;
+
+  tasks = tasks.filter((t) => t.name !== name);
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }

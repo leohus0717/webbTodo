@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "WebbUtveckling",
+  "steps": [
+    {
+      "file": "index.html",
+      "description": "Titel för hemsidan",
+      "line": 7
+    },
+    {
+      "file": "index.html",
+      "description": "Hemsidans bild",
+      "line": 8
+    },
+    {
+      "file": "index.html",
+      "description": "Meny knappen",
+      "line": 13
+    }
+  ],
+  "ref": "main"
+}
