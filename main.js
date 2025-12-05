@@ -5,12 +5,14 @@ function addTask() {
   let name = document.querySelector("#taskName").value;
   let date = document.querySelector("#date").value;
   let priority = document.querySelector("select").value;
+  let completed = false
 
   // Create simple task object
   const taskItem = {
     name: name,
     date: date,
     priority: priority,
+    completed: false
   };
 
   // Save to array
@@ -62,7 +64,7 @@ function displayTask(task) {
           >${priorityText}</span>
         </p>
       </div>
-      <input class="checkBox" type="checkbox" />
+      <input class="checkBox" type="checkbox" ${task.completed ? "checked" : ""} />
     </div>
 <div class="taskActions">
   <button class="btnStyle">Edit</button>
@@ -72,6 +74,13 @@ function displayTask(task) {
   `;
 
   document.querySelector(".taskList").appendChild(taskDiv);
+
+    // Add event listener to checkbox
+  const checkbox = taskDiv.querySelector(".checkBox");
+  checkbox.addEventListener("change", () => {
+    task.completed = checkbox.checked; // update task object
+    localStorage.setItem("tasks", JSON.stringify(tasks)); // save to localStorage
+  });
 }
 
 // -------------------- LOAD SAVED TASKS --------------------

@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="En todo websida" />
     <title>LHTodo</title>
-    <link
-      rel="icon"
-      href="/assets/images/LeonSignatureSVGForLHTODO.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="/assets/images/LeonSignatureSVGForLHTODO.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
@@ -78,7 +74,82 @@
         <div class="todoList">
           <!---------- Todo lista ---------->
           <h1>Todo list</h1>
-          <div class="taskList"></div>
+          <div class="taskList">
+            <!-- Low Priority Task -->
+<div class="task">
+  <div class="taskGrid">
+    <div class="taskText">
+      <h2>Låg Prioritet</h2>
+      <p>
+        Date: 2025-12-05 | Priority:
+        <span
+          style="
+            background-color: var(--priority-low);
+            padding: 0.25rem;
+            border-radius: 1rem;
+            text-align: center;
+          "
+        >low</span>
+      </p>
+    </div>
+    <input class="checkBox" type="checkbox" />
+  </div>
+  <div class="taskActions">
+    <button class="btnStyle">Edit</button>
+    <button class="btnStyle" onclick="deleteTask(this)">Delete</button>
+  </div>
+</div>
+
+<!-- Medium Priority Task -->
+<div class="task">
+  <div class="taskGrid">
+    <div class="taskText">
+      <h2>Medium Prioritet</h2>
+      <p>
+        Date: 2025-12-06 | Priority:
+        <span
+          style="
+            background-color: var(--priority-medium);
+            padding: 0.25rem;
+            border-radius: 1rem;
+            text-align: center;
+          "
+        >medium</span>
+      </p>
+    </div>
+    <input class="checkBox" type="checkbox" />
+  </div>
+  <div class="taskActions">
+    <button class="btnStyle">Edit</button>
+    <button class="btnStyle" onclick="deleteTask(this)">Delete</button>
+  </div>
+</div>
+
+<!-- High Priority Task -->
+<div class="task">
+  <div class="taskGrid">
+    <div class="taskText">
+      <h2>Hög Prioritet</h2>
+      <p>
+        Date: 2025-12-07 | Priority:
+        <span
+          style="
+            background-color: var(--priority-high);
+            padding: 0.25rem;
+            border-radius: 1rem;
+            text-align: center;
+          "
+        >high</span>
+      </p>
+    </div>
+    <input class="checkBox" type="checkbox" />
+  </div>
+  <div class="taskActions">
+    <button class="btnStyle">Edit</button>
+    <button class="btnStyle" onclick="deleteTask(this)">Delete</button>
+  </div>
+</div>
+
         </div>
       </div>
     </main>
