@@ -97,7 +97,7 @@ function loadTasks() {
 loadTasks();
 
 // -------------------- OTHER FUNCTIONS --------------------
-function toggle() {
+function toggleTheme() {
   document.body.classList.toggle("light");
 }
 
