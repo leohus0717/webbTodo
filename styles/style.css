@@ -245,6 +245,28 @@ h2 {
   padding-block: 1rem;
 }
 
+.editBox {
+  position: absolute;
+  justify-self: center;
+  top: 250px;
+  width: clamp(300px, 50%, 500px);
+  background: var(--bg);
+  padding: 3%;
+  border: var(--border-card);
+  transition: background 0.3s;
+  border-radius: 1.5rem;
+}
+
+.closeEditBtn {
+  background: var(--bg-light);
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 1.5rem;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+
 @media (min-width: 674px) {
   header {
     justify-items: center;
@@ -273,14 +295,11 @@ h2 {
   .closeBtn {
     display: none;
   }
+  main {
+    width: clamp(500px, 50%, 1000px);
+  }
 }
 
 .hidden {
   display: none;
-}
-
-@media (min-width: 674px) {
-  main {
-    width: 50%;
-  }
 }
