@@ -163,7 +163,7 @@ a {
 }
 
 h2 {
-  color: white;
+  color: var(--text);
 }
 
 .btnStyle {
