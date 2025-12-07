@@ -257,7 +257,7 @@ h2 {
 }
 
 .editBox {
-  position: absolute;
+  position: fixed;
   justify-self: center;
   top: 250px;
   width: clamp(300px, 50%, 500px);
