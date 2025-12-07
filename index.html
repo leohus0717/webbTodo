@@ -81,6 +81,33 @@
           <div class="taskList"></div>
         </div>
       </div>
+
+      <div class="editBox hidden">
+        <h1>Edit task</h1>
+        <div class="taskAlt">
+          <input
+            class="btnStyle"
+            type="text"
+            placeholder="Task name"
+            id="editTaskName"
+          />
+          <input
+            placeholder="Date"
+            class="btnStyle"
+            type="text"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+            id="editDate"
+          />
+          <select class="btnStyle" name="Priority">
+            <option value="1">Low</option>
+            <option value="2">Medium</option>
+            <option value="3">High</option>
+          </select>
+          <button onclick="saveTask()" class="saveBtn addBtn">Save</button>
+          <button onclick="closeEdit()" class="closeEditBtn">Close</button>
+        </div>
+      </div>
     </main>
 
     <footer>
