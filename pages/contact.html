@@ -11,6 +11,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/contact.css" />
   </head>
   <body>
     <header>
@@ -48,70 +49,24 @@
       </nav>
     </header>
 
-    <main>
-      <div class="taskCreate">
-        <h1>Add a new task</h1>
-        <div class="taskAlt">
-          <input
-            class="btnStyle"
-            type="text"
-            placeholder="Task name"
-            id="taskName"
-          />
-          <input
-            placeholder="Date"
-            class="btnStyle"
-            type="text"
-            onfocus="(this.type='date')"
-            onblur="(this.type='text')"
-            id="date"
-          />
-          <select class="btnStyle" name="Priority">
-            <option value="1">Low</option>
-            <option value="2">Medium</option>
-            <option value="3">High</option>
-          </select>
-          <button onclick="addTask()" class="addBtn">Add</button>
-        </div>
-        <div class="todoList">
-          <!---------- Todo lista ---------->
-          <h1>Todo list</h1>
-          <div class="taskList"></div>
+    <section class="contact-hero">
+      <div class="contact-card">
+        <div class="contactGrid">
+          <h1>Kontakt</h1>
+          <p class="email">
+            <a href="mailto:leohus0717@edu.halmstad.se"><span>E-Mail</span></a>
+          </p>
+          <p class="github">
+            <a href="https://github.com/leohus0717" target="_blank"><span>GitHub</span></a>
+          </p>
         </div>
       </div>
-
-      <div class="editBox hidden">
-        <h1>Edit task</h1>
-        <div class="taskAlt">
-          <input
-            class="btnStyle"
-            type="text"
-            placeholder="Task name"
-            id="editTaskName"
-          />
-          <input
-            placeholder="Date"
-            class="btnStyle"
-            type="text"
-            onfocus="(this.type='date')"
-            onblur="(this.type='text')"
-            id="editDate"
-          />
-          <select class="btnStyle" name="Priority">
-            <option value="1">Low</option>
-            <option value="2">Medium</option>
-            <option value="3">High</option>
-          </select>
-          <button onclick="saveTask()" class="saveBtn addBtn">Save</button>
-          <button onclick="closeEdit()" class="closeEditBtn">Close</button>
-        </div>
-      </div>
-    </main>
+    </section>
 
     <footer>
       <p>&copy; 2025 Leon Husic. All rights reserved.</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
   </body>
 </html>

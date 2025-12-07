@@ -11,6 +11,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/about.css" />
   </head>
   <body>
     <header>
@@ -48,70 +49,25 @@
       </nav>
     </header>
 
-    <main>
-      <div class="taskCreate">
-        <h1>Add a new task</h1>
-        <div class="taskAlt">
-          <input
-            class="btnStyle"
-            type="text"
-            placeholder="Task name"
-            id="taskName"
-          />
-          <input
-            placeholder="Date"
-            class="btnStyle"
-            type="text"
-            onfocus="(this.type='date')"
-            onblur="(this.type='text')"
-            id="date"
-          />
-          <select class="btnStyle" name="Priority">
-            <option value="1">Low</option>
-            <option value="2">Medium</option>
-            <option value="3">High</option>
-          </select>
-          <button onclick="addTask()" class="addBtn">Add</button>
-        </div>
-        <div class="todoList">
-          <!---------- Todo lista ---------->
-          <h1>Todo list</h1>
-          <div class="taskList"></div>
-        </div>
+    <section class="about-hero">
+      <div class="about-card">
+        <h1>Om webbsidan</h1>
+        <p>
+          Det här är en To-Do Dashboard som jag har byggt för att göra det
+          enkelt att planera och hantera uppgifter i vardagen. Sidan låter dig
+          skapa, redigera och ta bort tasks, sätta prioritet och markera dem som
+          klara. All data sparas automatiskt i webbläsaren och du kan växla
+          mellan ljust och mörkt tema. Projektet visar mina kunskaper i HTML,
+          CSS och JavaScript och är utvecklat med fokus på enkelhet, design och
+          användarvänlighet.
+        </p>
       </div>
-
-      <div class="editBox hidden">
-        <h1>Edit task</h1>
-        <div class="taskAlt">
-          <input
-            class="btnStyle"
-            type="text"
-            placeholder="Task name"
-            id="editTaskName"
-          />
-          <input
-            placeholder="Date"
-            class="btnStyle"
-            type="text"
-            onfocus="(this.type='date')"
-            onblur="(this.type='text')"
-            id="editDate"
-          />
-          <select class="btnStyle" name="Priority">
-            <option value="1">Low</option>
-            <option value="2">Medium</option>
-            <option value="3">High</option>
-          </select>
-          <button onclick="saveTask()" class="saveBtn addBtn">Save</button>
-          <button onclick="closeEdit()" class="closeEditBtn">Close</button>
-        </div>
-      </div>
-    </main>
+    </section>
 
     <footer>
       <p>&copy; 2025 Leon Husic. All rights reserved.</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
   </body>
 </html>
