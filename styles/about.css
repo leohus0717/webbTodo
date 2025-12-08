@@ -1,0 +1,40 @@
+
+.about-hero {
+  min-height: 80vh;
+  justify-items: center;
+  align-content: center;
+  
+  background: radial-gradient(circle at center,var(--bg-light),var(--bg-dark) 120%);
+  width: 100%;
+
+}
+
+.about-card {
+  background: color-mix(in oklch, var(--background), transparent 20%);
+  border: 1px solid var(--primary);
+  border-radius: 25px;
+  padding: 3rem;
+  width: 80%;
+}
+
+.about-card h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  padding-bottom: 1.5rem;
+}
+
+.about-card p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .about-card {
+    padding: 2rem;
+  }
+
+  .about-hero {
+    padding: 1rem;
+  }
+}

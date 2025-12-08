@@ -1,0 +1,321 @@
+:root {
+  /* Base colors from realtimecolors.com */
+  --text: oklch(95.78% 0.005 95.1);
+  --background: oklch(18.27% 0.01 88.81);
+  --primary: oklch(81.16% 0.045 91.3);
+  --secondary: oklch(49.33% 0.064 90.73);
+  --accent: oklch(69.78% 0.102 90.3);
+
+  --priority-high: oklch(60% 0.18 20); /* A vibrant, but not overpowering red */
+  --priority-medium: oklch(75% 0.12 80); /* A warm, noticeable orange-yellow */
+  --priority-low: oklch(70% 0.09 150); /* A calm, slightly muted green */
+}
+
+/* Derived colors - calculated from base colors */
+:root,
+body.light {
+  /* Derived background shades */
+  --bg-dark: oklch(from var(--background) clamp(0, l - 0.1, 1) c h);
+  --bg: oklch(from var(--background) l c h);
+  --bg-light: oklch(from var(--background) clamp(0, l + 0.1, 1) c h);
+
+  /* Derived text shades */
+  --text-muted: oklch(from var(--text) clamp(0, l - 0.25, 1) c h);
+
+  /* Borders & highlights */
+  --border: oklch(from var(--background) clamp(0, l + 0.2, 1) c h);
+  --highlight: oklch(from var(--primary) clamp(0, l + 0.1, 1) calc(c * 1.1) h);
+
+  /* Gradients */
+  --gradient: linear-gradient(0deg, var(--bg) 90%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+
+  /* Card border */
+  --border-card: solid 1px var(--border);
+
+  /* Shadows */
+  --shadow: 0px 2px 2px
+      oklch(from var(--background) clamp(0, l - 0.5, 1) c h / 0.07),
+    0px 4px 4px oklch(from var(--background) clamp(0, l - 0.5, 1) c h / 0.15);
+}
+
+/* Light mode base colors */
+body.light {
+  --text: oklch(17.73% 0.008 95.51);
+  --background: oklch(95.83% 0.007 88.64);
+  --primary: oklch(79.41% 0.059 90.72);
+  /* --primary: oklch(44.11% 0.05 91.18); */
+  /* --secondary: oklch(79.41% 0.059 90.72); */
+  --accent: oklch(67.95% 0.102 89.51);
+}
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.125s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  justify-items: center;
+  background-color: var(--bg);
+}
+
+img {
+  width: 100%;
+}
+
+header,
+main,
+footer {
+  min-height: 10vh;
+  /* border: solid 1px red; */
+  padding-inline: 3%;
+  width: 100%;
+}
+
+header {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  align-items: center;
+  border-bottom: solid 1px var(--highlight);
+  align-content: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--background);
+}
+
+main {
+  min-height: 80vh;
+}
+
+footer {
+  background-color: var(--bg-light);
+  align-content: center;
+  width: 1fr;
+}
+
+a,
+p,
+h1 {
+  color: var(--text);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text);
+  width: 30px;
+  cursor: pointer;
+}
+
+#toggleMode {
+  background: none;
+  color: var(--text);
+  width: 35px;
+  border: none;
+  position: absolute;
+  top: 10%;
+  right: 2.5%;
+}
+
+nav {
+  background-color: var(--bg-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5%;
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.toggleMenu {
+  color: var(--text);
+  background: none;
+  border: none;
+  width: 30px;
+  cursor: pointer;
+}
+
+.toggleTheme {
+  background: none;
+  color: var(--text);
+  width: 35px;
+  border: none;
+  position: absolute;
+  top: 27%;
+  right: 5%;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--text);
+}
+
+.btnStyle {
+  background: var(--bg-light);
+  border: solid 1px var(--border);
+  color: var(--text);
+  height: 4rem;
+  width: 100%;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.addBtn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  width: 100%;
+  height: 4rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.taskGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3%;
+}
+
+.checkBox {
+  appearance: none;
+  background-color: white;
+  border: solid 1px var(--border);
+  height: 3rem;
+  width: 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.checkBox:checked {
+  background-color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+.taskAlt {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  flex-direction: column;
+  gap: 2rem;
+  margin-block: 1rem;
+}
+.taskCreate {
+  padding: 3%;
+  padding-top: 5%;
+}
+
+.todoList {
+  padding-top: 5%;
+  h1 {
+    padding-bottom: 1rem;
+  }
+}
+
+.taskList {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 2rem;
+}
+
+.task {
+  padding-inline: 5%;
+  padding-block: 2%;
+  background-color: var(--primary);
+  border-radius: 30px;
+  h2 {
+    padding-block: 0.5rem;
+  }
+}
+
+.taskActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.editBox {
+  position: fixed;
+  justify-self: center;
+  top: 250px;
+  width: clamp(300px, 50%, 500px);
+  background: var(--bg);
+  padding: 3%;
+  border: var(--border-card);
+  transition: background 0.3s;
+  border-radius: 1.5rem;
+}
+
+.closeEditBtn {
+  background: var(--bg-light);
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 1.5rem;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+@media (min-width: 674px) {
+  header {
+    justify-items: center;
+  }
+  nav {
+    min-width: 50%;
+    position: static;
+    background: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    place-items: center;
+  }
+  #navBox {
+    min-width: 50%;
+    position: static;
+    background: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    place-items: center;
+  }
+  .toggleMenu {
+    display: none;
+  }
+  .closeBtn {
+    display: none;
+  }
+  main {
+    width: clamp(500px, 50%, 1000px);
+  }
+
+  .toggleTheme {
+    left: 3%;
+
+  }
+}
+
+.hidden {
+  display: none;
+}
