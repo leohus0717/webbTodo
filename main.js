@@ -82,8 +82,6 @@ function displayTask(task) {
   checkbox.addEventListener("change", checkboxChange);
 }
 
-
-
 function loadTasks() {
   const saved = localStorage.getItem("tasks");
 
@@ -112,8 +110,6 @@ function toggleMenu() {
   document.querySelector("nav").classList.toggle("hidden");
 }
 
-
-
 function deleteTask(button) {
   const taskDiv = button.parentElement.parentElement;
 
@@ -125,8 +121,6 @@ function deleteTask(button) {
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
-
-
 
 function editTask(button) {
   const taskDiv = button.parentElement.parentElement;

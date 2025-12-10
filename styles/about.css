@@ -1,12 +1,14 @@
-
 .about-hero {
   min-height: 80vh;
   justify-items: center;
   align-content: center;
-  
-  background: radial-gradient(circle at center,var(--bg-light),var(--bg-dark) 120%);
-  width: 100%;
 
+  background: radial-gradient(
+    circle at center,
+    var(--bg-light),
+    var(--bg-dark) 120%
+  );
+  width: 100%;
 }
 
 .about-card {
