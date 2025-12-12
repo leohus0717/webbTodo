@@ -1,0 +1,53 @@
+.contact-hero {
+  min-height: 80vh;
+  justify-items: center;
+  align-content: top;
+  padding-top: 20%;
+  background: var(--bg);
+  width: 100%;
+}
+
+.contactGrid {
+  display: grid;
+  gap: 1.2rem;
+  place-items: center;
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  .email {
+    font-size: 1.2rem;
+    background: var(--accent);
+    color: var(--text);
+    padding-inline: 0.5rem;
+    padding-block: 0.2rem;
+    border-radius: 1rem;
+  }
+  .github {
+    font-size: 1.2rem;
+    background: var(--accent);
+    color: var(--text);
+    padding-inline: 0.5rem;
+    padding-block: 0.2rem;
+    border-radius: 1rem;
+  }
+}
+
+.links {
+  display: grid;
+  gap: 1.2rem;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.linkBtn {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 674px) {
+  .contact-hero {
+    align-content: center;
+    padding-top: 0;
+  }
+}
